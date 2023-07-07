@@ -5,8 +5,11 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  schedule:
-    - cron: '20 15 * * 6'
+  workflow_run:
+    workflows: ["CodeQL"]
+    types:
+      - requested
+      - rerequested
 
 jobs:
   analyze:
@@ -18,21 +21,8 @@ jobs:
       contents: read
       security-events: write
 
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ 'javascript' ]
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
+    - name: Cancel Previous Runs
+      uses: styfle/cancel-workflow-action@0.8.0
       with:
-        languages: ${{ matrix.language }}
-
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
-      with:
-        category: "/language:${{ matrix.language }}"
+        access_token: ${{ secrets.GITHUB_TOKEN }}
