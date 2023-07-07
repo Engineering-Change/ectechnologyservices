@@ -1,0 +1,181 @@
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #f7f7f7;
+  transition: background-color 0.3s ease;
+}
+
+.slide-in {
+  animation: slide-in 1s ease forwards;
+}
+
+.gradient-text {
+  background: -webkit-linear-gradient(45deg, #00c6ff, #0072ff, #ff00ff);
+  background: -moz-linear-gradient(45deg, #00c6ff, #0072ff, #ff00ff);
+  background: -o-linear-gradient(45deg, #00c6ff, #0072ff, #ff00ff);
+  background: linear-gradient(45deg, #00c6ff, #0072ff, #ff00ff);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  transition: -webkit-text-fill-color 0.3s ease;
+  transition: text-fill-color 0.3s ease;
+}
+
+.dark-mode .gradient-text {
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background: -webkit-linear-gradient(45deg, #ff00ff, #0072ff, #00c6ff);
+  background: -moz-linear-gradient(45deg, #ff00ff, #0072ff, #00c6ff);
+  background: -o-linear-gradient(45deg, #ff00ff, #0072ff, #00c6ff);
+  background: linear-gradient(45deg, #ff00ff, #0072ff, #00c6ff);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 1px #fff;
+  -moz-text-stroke: 1px #fff;
+  text-stroke: 1px #fff;
+  transition: -webkit-text-fill-color 0.3s ease;
+  transition: text-fill-color 0.3s ease;
+}
+
+.engineering-change {
+  color: rgb(117, 117, 117);
+  transition: color 0.3s ease;
+}
+
+.dark-mode .engineering-change {
+  color: #ccc;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+.mode-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.mode-toggle i {
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.mode-toggle:hover i {
+  transform: scale(1.1);
+}
+
+.dark-mode .mode-toggle i {
+  color: #fff;
+}
+
+.dark-mode {
+  background-color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.icon-container a {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.github-icon,
+.email-icon {
+  display: inline-block;
+  color: #333;
+  box-shadow: 0px 2px 4px  rgba(117, 117, 117);;
+  padding: 12px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  margin-right: 15px;
+}
+
+.github-icon:hover,
+.email-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 16px  rgba(117, 117, 117);;
+}
+
+.github-icon svg,
+.email-icon svg {
+  width: 100%;
+  height: auto;
+}
+
+
+.dark-mode .github-icon,
+.dark-mode .email-icon {
+  color: #fff;
+}
+
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading-text {
+  animation: fade-in-out 10s ease-in-out infinite;
+  color: rgb(232, 106, 10);
+}
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 2em;
+  background-color: #333;
+  /* Additional styles as desired */
+}
+
+.loading-screen span {
+  opacity: 1;
+  animation: fadeOut 2s ease-in-out forwards;
+  color: rgb(117, 117, 117);
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
