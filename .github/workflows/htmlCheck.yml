@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: anishathalye/proof-html@v1.1.0
         with:
-          directory: ./public/index.html
+          directory: ../public/index.html
