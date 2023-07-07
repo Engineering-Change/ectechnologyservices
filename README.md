@@ -1,5 +1,7 @@
 # Create React App
 
+<img width="423" alt="Screenshot 2023-07-07 at 1 31 43 AM" src="https://github.com/Engineering-Change/ectechnologyservices/assets/31228460/a59e2439-d732-4515-969a-e02408391b17">
+
 This directory is a brief example of a [Create React App](https://github.com/facebook/create-react-app) site that can be deployed to Vercel with zero configuration.
 
 ## Deploy Your Own
