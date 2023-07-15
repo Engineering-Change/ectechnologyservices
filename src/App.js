@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import OutboxIcon from '@mui/icons-material/Outbox';
 import './App.css';
+import Footer from './Footer';
+import image1 from "../src/assets/image1.png";
+import image2 from "../src/assets/image2.png";
+import image3 from "../src/assets/image3.png";
+import image4 from "../src/assets/image4.png";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -21,7 +24,7 @@ const App = () => {
   };
 
   if (loading) {
-    return <div class="loading-screen"><span>Welcome</span></div>
+    return <div className="loading-screen"><span>Welcome</span></div>;
   }
 
   return (
@@ -31,17 +34,30 @@ const App = () => {
           {isNightMode ? <Brightness7Icon style={{color: "rgb(117, 117, 117)"}}/> : <Brightness4Icon />}
         </div>
         <h1 className={`gradient-text ${isNightMode ? 'dark-gradient' : ''} slide-in`}>EC, Technology Services</h1>
-        <h2 className="engineering-change">Engineering Change</h2>
-        <p className="loading-text">Website under Construction, pardon us in the meantime.</p>
-        <div className="icon-container">
+        <h2 className="engineering-change">
           <a href="https://github.com/Engineering-Change" target="_blank" rel="noopener noreferrer">
-            <GitHubIcon fontSize="large" className={`github-icon ${isNightMode ? 'dark-mode' : ''}`} />
+            Engineering Change
           </a>
-          <a href="mailto:info@ectechnologyservices.com">
-            <OutboxIcon fontSize="large" className={`email-icon ${isNightMode ? 'dark-mode' : ''}`} />
-          </a>
-        </div>
+        </h2>
       </header>
+      <main>
+        <p className="title">Web design links below</p>
+        <div className="image-grid">
+        <a href="https://gitcommands.live/" target="_blank" rel="noopener noreferrer">
+        <img src={image1} alt="" className="grid-image" />
+        </a>
+        <a href="https://aichat-bot.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <img src={image2} alt="" className="grid-image" />
+        </a>
+        <a href="https://jeremyescobar.live" target="_blank" rel="noopener noreferrer">
+        <img src={image3} alt="" className="grid-image" />
+        </a>
+        <a href="https://jeremyescobar.live" target="_blank" rel="noopener noreferrer">
+        <img src={image4} alt="" className="grid-image" />
+        </a>
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 };
