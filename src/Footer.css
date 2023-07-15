@@ -1,0 +1,32 @@
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .footer-text {
+    font-size: 14px;
+  }
+  
+  .dark-mode .footer {
+    background-color: #333;
+  }
+  
+  .dark-mode .footer-text {
+    color: #fff;
+  }
+
+  
+  .footer-text a {
+    color: #d86e41;
+    text-decoration: none;
+  }
+  
+  .footer-text a:hover {
+    text-decoration: underline;
+  }
