@@ -27,6 +27,14 @@ const App = () => {
         <div className='majors-content'>
           <h1 className='major'> Our team prioritizes usability, <br />
           performance, and reliability in all aspects of our work.</h1>
+          <div class="bubble-text">
+          <p>Web design</p>
+          <p>Software Development</p>
+          <p>Embedded Systems</p>
+          <p>Software Testing</p>
+          <p>Github Actions</p>
+          <p>Software Life Cycle</p>
+          </div>
         </div>
         </div>
       <Footer />
