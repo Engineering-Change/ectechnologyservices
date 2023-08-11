@@ -1,62 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
+import React from 'react';
 import './App.css';
 import Footer from './Footer';
-import image1 from "../src/assets/image1.png";
-import image2 from "../src/assets/image2.png";
-import image3 from "../src/assets/image3.png";
-import image4 from "../src/assets/image4.png";
+import logo from './logo.jpg';
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
-  const [isNightMode, setIsNightMode] = useState(true);
-
-  useEffect(() => {
-    // Simulating loading time
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
-
-  const handleModeToggle = () => {
-    setIsNightMode((prevMode) => !prevMode);
-  };
-
-  if (loading) {
-    return <div className="loading-screen"><span>Welcome</span></div>;
-  }
 
   return (
-    <div className={`App ${loading ? 'loading' : ''} ${isNightMode ? 'dark-mode' : ''}`}>
+    <div className="App">
       <header>
-        <div className="mode-toggle" onClick={handleModeToggle}>
-          {isNightMode ? <Brightness7Icon style={{color: "rgb(117, 117, 117)"}}/> : <Brightness4Icon />}
-        </div>
-        <h1 className={`gradient-text ${isNightMode ? 'dark-gradient' : ''} slide-in`}>EC, Technology Services</h1>
-        <h2 className="engineering-change">
+        <div className="header-content">
           <a href="https://github.com/Engineering-Change" target="_blank" rel="noopener noreferrer">
-            Engineering Change
+            <img src={logo} alt="Logo" className="logo" />
           </a>
-        </h2>
-      </header>
-      <main>
-        <p className="title">Web design links below</p>
-        <div className="image-grid">
-        <a href="https://gitcommands.live/" target="_blank" rel="noopener noreferrer">
-        <img src={image1} alt="" className="grid-image" />
-        </a>
-        <a href="https://aichat-bot.vercel.app/" target="_blank" rel="noopener noreferrer">
-        <img src={image2} alt="" className="grid-image" />
-        </a>
-        <a href="https://jeremyescobar.live" target="_blank" rel="noopener noreferrer">
-        <img src={image3} alt="" className="grid-image" />
-        </a>
-        <a href="https://jeremyescobar.live" target="_blank" rel="noopener noreferrer">
-        <img src={image4} alt="" className="grid-image" />
-        </a>
+          <div className="header-text">
+            <h1 className="gradient-text slide-in">EC, Technology Services</h1>
+          </div>
         </div>
-      </main>
+      </header>
+      <div className='minors'>
+        <div className='minors-content'>
+          <h1 className='minor'> Creating the future, <br />
+          one line of code at a time!</h1>
+        </div>
+      </div>
+      <div className='majors'>
+        <div className='majors-content'>
+          <h1 className='major'> Our team prioritizes usability, <br />
+          performance, and reliability in all aspects of our work.</h1>
+        </div>
+        </div>
       <Footer />
     </div>
   );

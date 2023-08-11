@@ -1,3 +1,100 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+  padding-bottom: 100px;
+  padding-top: 20px;
+}
+
+.slide-in {
+  animation: slide-in 1s ease forwards;
+}
+
+.gradient-text {
+  color: #8B0000; /* Deep dark red color */
+  transition: color 0.3s ease;
+}
+
+.minors {
+  color: white;
+  width: 100%; /* Set the width to 100% */
+  margin: 0;   /* Remove any margins */
+  padding: 80px; 
+  background: linear-gradient(to right, #0039a3, #3057a0, #0039a3);
+  text-align: left;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.minors-content {
+  width: 80%; /* You can adjust this as needed */
+  text-align: left; /* Left-align the text within the container */
+}
+@media screen and (max-width: 768px) {
+  .minors {
+    font-size: 20px; /* Adjust the font size for smaller screens */
+    padding: 10px; /* You can adjust padding if necessary */
+  }
+
+  .minors-content {
+    width: 90%; /* You can adjust the width to a larger value if necessary */
+  }
+}
+header {
+  width: 100%;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 145px;
+  margin-right: 20px; 
+  animation: fade-in-logo 3s ease forwards; /* Apply the fade-in animation */
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns text to the left */
+}
+@media only screen and (max-width: 768px) {
+  header {
+    padding-left: 10px; /* You can adjust this padding as needed */
+    margin-bottom: 10px;
+  }
+
+  .header-content {
+    align-items: center; /* Centers items vertically */
+    justify-content: flex-start; /* Keeps items left-aligned horizontally */
+    display: flex; /* Ensures that flex properties are applied */
+  }
+
+  .logo {
+    height: 80px; /* Reduces the size of the logo */
+    margin-right: 10px; /* Adjust the right margin between the logo and text */
+    opacity: 0; /* Set the initial opacity to 0 */
+  }
+
+  .header-text {
+    align-items: center; /* Centers text horizontally */
+  }
+
+  .gradient-text {
+    font-size: 20px; /* Adjust the font size for smaller screens */
+  }
+}
+
+
 @keyframes slide-in {
   0% {
     opacity: 0;
@@ -9,223 +106,60 @@
   }
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  text-align: center;
-  background-color: #f7f7f7;
-  transition: background-color 0.3s ease;
-  padding-bottom: 300px;
-  padding-top: 20px;
-}
-
 .slide-in {
   animation: slide-in 1s ease forwards;
 }
 
-.gradient-text {
-  background: -webkit-linear-gradient(45deg, #00c6ff, #0072ff, #ff00ff);
-  background: -moz-linear-gradient(45deg, #00c6ff, #0072ff, #ff00ff);
-  background: -o-linear-gradient(45deg, #00c6ff, #0072ff, #ff00ff);
-  background: linear-gradient(45deg, #00c6ff, #0072ff, #ff00ff);
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-  transition: -webkit-text-fill-color 0.3s ease;
+@keyframes fade-in-logo {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Add this to make sure padding and border are included in the width */
+* {
+  box-sizing: border-box;
 }
 
-.dark-mode .gradient-text {
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-  text-fill-color: transparent;
-  background: -webkit-linear-gradient(45deg, #ff00ff, #0072ff, #00c6ff);
-  background: -moz-linear-gradient(45deg, #ff00ff, #0072ff, #00c6ff);
-  background: -o-linear-gradient(45deg, #ff00ff, #0072ff, #00c6ff);
-  background: linear-gradient(45deg, #ff00ff, #0072ff, #00c6ff);
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-text-stroke: 1px #fff;
-  -moz-text-stroke: 1px #fff;
-  text-stroke: 1px #fff;
-  transition: -webkit-text-fill-color 0.3s ease;
+/* Adjust the padding for the minors class for mobile view */
+@media screen and (max-width: 768px) {
+  .minors {
+    padding: 95px; /* Adjusted from 170px; you can tweak this as needed */
+  }
 }
 
-.engineering-change a {
-  color: rgb(134, 133, 133);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.engineering-change a:hover {
-  text-decoration: underline;
+@media screen and (max-width: 768px) {
+  .majors {
+    padding: 95px; /* Adjusted from 170px; you can tweak this as needed */
+  }
 }
 
 
-.dark-mode .engineering-change {
-  color: #ccc;
-}
-
-header {
-  margin-bottom: 20px;
-}
-
-.mode-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.mode-toggle i {
-  font-size: 24px;
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-.mode-toggle:hover i {
-  transform: scale(1.1);
-}
-
-.dark-mode .mode-toggle i {
-  color: #fff;
-}
-
-.dark-mode {
-  background-color: #333;
-  transition: background-color 0.3s ease;
-}
-
-.icon-container {
+.majors {
+  color: #8B0000;
+  width: 100%; /* Set the width to 100% */
+  margin: 0;   /* Remove any margins */
+  padding: 80px; 
+  background-color: #f0f0f0;  
+  text-align: left;
+  font-size: 40px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  margin-bottom: 30px;
 }
 
-.icon-container a {
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
+.majors-content {
+  width: 80%; /* You can adjust this as needed */
+  text-align: left; /* Left-align the text within the container */
 }
-
-.github-icon,
-.email-icon {
-  display: inline-block;
-  color: #333;
-  box-shadow: 0px 2px 4px rgba(117, 117, 117);
-  padding: 12px;
-  border-radius: 50%;
-  transition: all 0.3s ease-in-out;
-  margin-right: 15px;
-}
-
-.github-icon:hover,
-.email-icon:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 8px 16px rgba(117, 117, 117);
-}
-
-.github-icon svg,
-.email-icon svg {
-  width: 100%;
-  height: auto;
-}
-
-.dark-mode .github-icon,
-.dark-mode .email-icon {
-  color: #fff;
-}
-
-@keyframes fade-in-out {
-  0% {
-    opacity: 1;
+@media screen and (max-width: 768px) {
+  .majors {
+    font-size: 20px; /* Adjust the font size for smaller screens */
+    padding: 100px; /* You can adjust padding if necessary */
   }
-  50% {
-    opacity: 0;
+
+  .majors-content {
+    width: 90%; /* You can adjust the width to a larger value if necessary */
   }
-  100% {
-    opacity: 1;
-  }
-}
-
-.loading-text {
-  animation: fade-in-out 10s ease-in-out infinite;
-  color: rgb(232, 106, 10);
-}
-
-.loading-screen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-size: 2em;
-  background-color: #333;
-}
-
-.loading-screen span {
-  opacity: 1;
-  animation: fadeOut 2s ease-in-out forwards;
-  color: rgb(117, 117, 117);
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  justify-items: center;
-  margin: 20px auto;
-  max-width: 800px;
-  margin-bottom: 100px;
-}
-
-.grid-image {
-  max-width: 100%;
-  height: auto;
-  box-shadow: 0px 4px 8px rgba(54, 53, 53, 0.3); /* Add the box shadow */
-  background-color: #f5f5f5; /* Add the medium gray background color */
-  opacity: 0; /* Set initial opacity to 0 */
-  animation: fade-in 3s forwards; /* Add the fade-in animation */
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .image-grid {
-    grid-template-columns: 1fr;
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-}
-
-.title {
-  font-size: 18px;
-  font-weight: bold;
-  color: #d86e41;
-  margin-bottom: 10px;
 }

@@ -1,12 +1,14 @@
 .footer {
-    background-color: #333;
-    color: white;
+    background-color: #fff;
+    color: #333;
     text-align: center;
     padding: 5px;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
+    margin-top: 100px;
+    font-weight: bold;
   }
   
   .footer-text {
@@ -14,7 +16,7 @@
   }
   
   .dark-mode .footer {
-    background-color: #333;
+    background-color: #fff;
   }
   
   .dark-mode .footer-text {
@@ -23,8 +25,9 @@
 
   
   .footer-text a {
-    color: #d86e41;
+    color: #8B0000;
     text-decoration: none;
+    font-weight: bold;
   }
   
   .footer-text a:hover {
