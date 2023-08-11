@@ -15,7 +15,7 @@ dependencies:
     specifier: ^11.11.0
     version: 11.11.0(@emotion/react@11.11.1)(react@18.2.0)
   '@fortawesome/free-brands-svg-icons':
-    specifier: ^6.4.0
+    specifier: ^6.4.2
     version: 6.4.2
   '@fortawesome/react-fontawesome':
     specifier: ^0.2.0
