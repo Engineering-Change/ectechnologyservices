@@ -1,180 +1,42 @@
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
   text-align: center;
-  background-color: #f0f0f0;
-  transition: background-color 0.3s ease;
-  padding-bottom: 100px;
-  padding-top: 20px;
-}
-
-.slide-in {
-  animation: slide-in 1s ease forwards;
-}
-
-.gradient-text {
-  color: #8B0000; /* Deep dark red color */
-  transition: color 0.3s ease;
-}
-
-.minors {
-  color: white;
-  width: 100%; /* Set the width to 100% */
-  margin: 0;   /* Remove any margins */
-  padding: 80px; 
-  background: linear-gradient(to right, #0039a3, #3057a0, #0039a3);
-  text-align: left;
-  font-size: 40px;
-  display: flex;
-  justify-content: center;
-}
-
-.minors-content {
-  width: 80%; /* You can adjust this as needed */
-  text-align: left; /* Left-align the text within the container */
-}
-@media screen and (max-width: 768px) {
-  .minors {
-    font-size: 20px; /* Adjust the font size for smaller screens */
-    padding: 10px; /* You can adjust padding if necessary */
-  }
-
-  .minors-content {
-    width: 90%; /* You can adjust the width to a larger value if necessary */
-  }
-}
-header {
-  width: 100%;
-  padding-left: 20px;
-  margin-bottom: 10px;
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
 }
 
 .logo {
-  height: 145px;
-  margin-right: 20px; 
-  animation: fade-in-logo 3s ease forwards; /* Apply the fade-in animation */
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.header-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Aligns text to the left */
-}
-@media only screen and (max-width: 768px) {
-  header {
-    padding-left: 10px; /* You can adjust this padding as needed */
-    margin-bottom: 10px;
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-
-  .header-content {
-    align-items: center; /* Centers items vertically */
-    justify-content: flex-start; /* Keeps items left-aligned horizontally */
-    display: flex; /* Ensures that flex properties are applied */
-  }
-
-  .logo {
-    height: 80px; /* Reduces the size of the logo */
-    margin-right: 10px; /* Adjust the right margin between the logo and text */
-    opacity: 0; /* Set the initial opacity to 0 */
-  }
-
-  .header-text {
-    align-items: center; /* Centers text horizontally */
-  }
-
-  .gradient-text {
-    font-size: 20px; /* Adjust the font size for smaller screens */
+  to {
+    transform: rotate(360deg);
   }
 }
 
-
-@keyframes slide-in {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
   }
 }
 
-.slide-in {
-  animation: slide-in 1s ease forwards;
+.card {
+  padding: 2em;
 }
 
-@keyframes fade-in-logo {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-/* Add this to make sure padding and border are included in the width */
-* {
-  box-sizing: border-box;
-}
-
-/* Adjust the padding for the minors class for mobile view */
-@media screen and (max-width: 768px) {
-  .minors {
-    padding: 95px; /* Adjusted from 170px; you can tweak this as needed */
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .majors {
-    padding: 95px; /* Adjusted from 170px; you can tweak this as needed */
-  }
-}
-
-
-.majors {
-  color: #8B0000;
-  width: 100%; /* Set the width to 100% */
-  margin: 0;   /* Remove any margins */
-  padding: 80px; 
-  background-color: #f0f0f0;  
-  text-align: left;
-  font-size: 40px;
-  display: flex;
-  justify-content: center;
-}
-
-.majors-content {
-  width: 80%; /* You can adjust this as needed */
-  text-align: left; /* Left-align the text within the container */
-}
-@media screen and (max-width: 768px) {
-  .majors {
-    font-size: 20px; /* Adjust the font size for smaller screens */
-    padding: 100px; /* You can adjust padding if necessary */
-  }
-
-  .majors-content {
-    width: 90%; /* You can adjust the width to a larger value if necessary */
-  }
-}
-.bubble-text p {
-  background: linear-gradient(to right, #0039a3, #3057a0, #0039a3);
-  color: #ffffff; /* Text color */
-  padding: 15px 25px; /* Space around the text */
-  border-radius: 25px; /* Rounded corners */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
-  display: inline-block; /* Align horizontally */
-  margin: 10px; /* Space between bubbles */
-  font-weight: 400; /* Font weight */
-}
-
-
-.bubble-text {
-  text-align: center; /* Center the text bubbles */
+.read-the-docs {
+  color: #888;
 }
