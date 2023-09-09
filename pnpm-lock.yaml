@@ -59,7 +59,7 @@ devDependencies:
     specifier: ^0.4.3
     version: 0.4.3(eslint@8.49.0)
   postcss:
-    specifier: ^8.4.28
+    specifier: ^8.4.29
     version: 8.4.29
   prop-types:
     specifier: ^15.8.1
