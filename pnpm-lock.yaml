@@ -32,7 +32,7 @@ dependencies:
 
 devDependencies:
   '@tailwindcss/forms':
-    specifier: ^0.5.4
+    specifier: ^0.5.6
     version: 0.5.6(tailwindcss@3.3.3)
   '@types/react':
     specifier: ^18.0.28
